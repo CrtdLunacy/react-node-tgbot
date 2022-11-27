@@ -62,17 +62,10 @@ app.post('/web-data', async (req, res) => {
       type: 'article',
       id: queryId,
       title: 'Успешная покупка',
-      imput_message_content: {message_text: 'Поздравляю с покупкой, вы приобрели товар на сумму ' + totalPrice}
+      imput_message_content: {message_text: 'Поздравляю с покупкой, вы приобрели товар на сумму ' + totalPrice, products.map(item => item.title).join(', ')}
     })
     return res.status(200).json({});
   } catch (error) {
-    console.log(error)
-    await bot.answerWebAppQuery(queryId, {
-      type: 'article',
-      id: queryId,
-      title: 'Не удалось приобрести товар',
-      imput_message_content: {message_text: 'Не удалось приобрести товар'}
-    })
     return res.status(500).json({});
   }
 
