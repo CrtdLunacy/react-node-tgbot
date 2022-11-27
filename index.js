@@ -74,4 +74,4 @@ app.post('/web-data', async (req, res) => {
 
 const PORT = 8000;
 
-app.listen(PORT, () => console.log(`Server started on port: ${PORT} ${app.path}`));
+app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
