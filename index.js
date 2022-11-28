@@ -5,7 +5,6 @@ require('dotenv').config();
 const token = '5881878845:AAF82RsPjgXRzrfKpjSapdGnStyGUrqDgMg';
 const webAppUrl = 'https://react-bot-app.vercel.app/';
 
-
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
 
@@ -52,11 +51,7 @@ bot.on('message', async (msg) => {
 });
 
 app.post('/web-data', async (req, res) => {
-  const {
-    queryId,
-    products,
-    totalPrice
-  } = req.body;
+  const {queryId,products,totalPrice} = req.body;
   try {
     await bot.answerWebAppQuery(queryId, {
       type: 'article',
@@ -69,9 +64,8 @@ app.post('/web-data', async (req, res) => {
     return res.status(500).json({});
   }
 
-
 })
 
-const PORT = 8080;
+const PORT = 8000;
 
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
