@@ -62,11 +62,11 @@ app.post('/web-data', async (req, res) => {
       type: 'article',
       id: queryId,
       title: 'Успешная покупка',
-      imput_message_content: {message_text: `Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`}
+      input_message_content: {message_text: `Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`}
     })
     return res.status(200).json({});
   } catch (error) {
-    return res.status(400).json({});
+    return res.status(500).json({});
   }
 
 
