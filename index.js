@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const token = '5881878845:AAF82RsPjgXRzrfKpjSapdGnStyGUrqDgMg';
+const token = 'YOUR_API_KEY';
 const webAppUrl = 'https://react-bot-app.vercel.app/';
 
 const bot = new TelegramBot(token, {polling: true});
